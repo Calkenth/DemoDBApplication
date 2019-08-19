@@ -27,8 +27,30 @@ namespace DemoDBApplication
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
-            MessageBox.Show("Connection open!");
+
+            SqlCommand sqlCommand;
+            SqlDataReader dataReader;
+            String sql, Output = string.Empty;
+
+            sql = "Select TutorialID,TutorialName from TutorialTable";
+
+            sqlCommand = new SqlCommand(sql, cnn);
+
+            dataReader = sqlCommand.ExecuteReader();
+            while (dataReader.Read())
+            {
+                Output = Output + dataReader.GetValue(0) + "-" + dataReader.GetValue(1) + "\n";
+            }
+
+            MessageBox.Show(Output);
+            dataReader.Close();
+            sqlCommand.Dispose();
             cnn.Close();
+        }
+
+        private void InsertBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
