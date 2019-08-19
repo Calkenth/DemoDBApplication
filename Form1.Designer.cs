@@ -47,10 +47,14 @@
             this.demoDBDataSet = new DemoDBApplication.demoDBDataSet();
             this.tutorialTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tutorialTableTableAdapter = new DemoDBApplication.demoDBDataSetTableAdapters.TutorialTableTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tutorialIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tutorialNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demoDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tutorialTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
@@ -94,7 +98,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(227, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(417, 25);
             this.bindingNavigator1.TabIndex = 2;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -171,7 +175,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorDeleteItem
@@ -197,11 +201,37 @@
             // 
             this.tutorialTableTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tutorialIDDataGridViewTextBoxColumn,
+            this.tutorialNameDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tutorialTableBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(85, 198);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // tutorialIDDataGridViewTextBoxColumn
+            // 
+            this.tutorialIDDataGridViewTextBoxColumn.DataPropertyName = "TutorialID";
+            this.tutorialIDDataGridViewTextBoxColumn.HeaderText = "TutorialID";
+            this.tutorialIDDataGridViewTextBoxColumn.Name = "tutorialIDDataGridViewTextBoxColumn";
+            // 
+            // tutorialNameDataGridViewTextBoxColumn
+            // 
+            this.tutorialNameDataGridViewTextBoxColumn.DataPropertyName = "TutorialName";
+            this.tutorialNameDataGridViewTextBoxColumn.HeaderText = "TutorialName";
+            this.tutorialNameDataGridViewTextBoxColumn.Name = "tutorialNameDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 228);
+            this.ClientSize = new System.Drawing.Size(417, 405);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtID);
@@ -213,6 +243,7 @@
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demoDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tutorialTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,6 +268,9 @@
         private demoDBDataSet demoDBDataSet;
         private System.Windows.Forms.BindingSource tutorialTableBindingSource;
         private demoDBDataSetTableAdapters.TutorialTableTableAdapter tutorialTableTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tutorialIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tutorialNameDataGridViewTextBoxColumn;
     }
 }
 
